@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*estos estilos son para las imagenes de los personajes al darle un hover se muestre el nombre del personaje*/
+.article {
+  overflow: hidden;
+  transition: height 0.5s;
+  interpolate-size: allow-keywords;
+}
+.article:hover {
+  height: auto;
+}
+
+html,
+body {
+  background-color: black;
+  color: red;
+}
+.CardSerie {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 400px;
+}
