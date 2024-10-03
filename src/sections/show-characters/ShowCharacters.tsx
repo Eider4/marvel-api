@@ -10,7 +10,7 @@ const ShowCharacters: React.FC<Props> = ({ data }) => {
       {data.map((character: characters) => (
         <div
           key={character.id}
-          className="article"
+          className="article h-48 cursor-pointer"
           onClick={() => navigate(`/character/${character.id}`)}
         >
           <img
