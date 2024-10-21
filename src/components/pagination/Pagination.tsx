@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 type PaginationProps = {
   page?: string;
+  type: string;
 };
-const Pagination: React.FC<PaginationProps> = ({ page }) => {
+const Pagination: React.FC<PaginationProps> = ({ page, type }) => {
   const nums = [1, 2, 3, 4, 5];
   const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({ page }) => {
             <p
               onClick={() => {
                 if (currentPage > 0)
-                  navigate(`/pages-characters/${currentPage - 1}`);
+                  navigate(`/pages-${type}/${currentPage - 1}`);
               }}
               className={`flex items-center justify-center px-4 py-2 leading-tight text-white bg-blue-900 border-2 border-red-600 rounded-l-lg hover:text-yellow-500 hover:bg-red-700 transition duration-300 cursor-pointer ${
                 currentPage === 42 ? "cursor-not-allowed opacity-50" : ""
@@ -35,7 +36,7 @@ const Pagination: React.FC<PaginationProps> = ({ page }) => {
                 <p
                   key={i}
                   onClick={() => {
-                    navigate(`/pages-characters/${num}`);
+                    navigate(`/pages-${type}/${num}`);
                   }}
                   className={`flex items-center justify-center px-4 py-2 leading-tight text-white bg-blue-900 border-2 border-red-600 hover:text-yellow-500 hover:bg-red-700 cursor-pointer transition duration-300 ${
                     num === currentPage
@@ -54,7 +55,7 @@ const Pagination: React.FC<PaginationProps> = ({ page }) => {
             <p
               onClick={() => {
                 if (currentPage < 42)
-                  navigate(`/pages-characters/${currentPage + 1}`);
+                  navigate(`/pages-${type}/${currentPage + 1}`);
               }}
               className={`flex items-center justify-center px-4 py-2 leading-tight text-white bg-blue-900 border-2 border-red-600 rounded-r-lg hover:text-yellow-500 hover:bg-red-700 transition duration-300 cursor-pointer ${
                 currentPage === 42 ? "cursor-not-allowed opacity-50" : ""

@@ -31,5 +31,8 @@ export async function obtenerPersonajesConImagen(type: String) {
   }
 
   // Devolver solo los primeros 12 personajes
-  return personajesConImagen.slice(0, 12);
+  const width = screen.height;
+  console.log(width);
+
+  return personajesConImagen.slice(0, 15);
 }

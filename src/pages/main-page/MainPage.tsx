@@ -26,10 +26,8 @@ export default function MainPage() {
 
   return (
     <div className="min-h-screen text-black flex flex-col items-center pt-10">
-      <h1 className="text-5xl font-bold text-marvel-red mb-8">
-        Marvel Characters
-      </h1>
-      <div className="absolute top-[28rem] pb-10">
+      <h1 className="texto-con-fondo ">Marvel</h1>
+      <div className="absolute top-[16rem] pb-10">
         <ul className={`flex justify-center gap-10 ${styles.modalList}`}>
           {["characters", "comics", "creators", "events", "series"].map(
             (type) => (
@@ -44,16 +42,14 @@ export default function MainPage() {
               </li>
             )
           )}
-          <>
-            <p
-              onClick={() => navigate("/pages-" + activeItem + "/1")}
-              className="text-marvel-yellow cursor-pointer"
-            >
-              more {activeItem}
-            </p>
-          </>
         </ul>
-        <section className={`${styles.section}`}>
+        <p
+          onClick={() => navigate("/pages-" + activeItem + "/1")}
+          className="text-marvel-yellow cursor-pointer absolute top-9  right-3"
+        >
+          more {activeItem}
+        </p>
+        <section className={`${styles.section} `}>
           {data && data.length > 0 ? (
             data.map((item: any) => (
               <img
@@ -65,7 +61,7 @@ export default function MainPage() {
             ))
           ) : (
             <div className="relative w-[900px] h-[400px]">
-              <span className="absolute top-1/2 left-[45%]">
+              <span className="absolute center1">
                 <ReactLoading type={"bars"} color="#999" />
               </span>
             </div>

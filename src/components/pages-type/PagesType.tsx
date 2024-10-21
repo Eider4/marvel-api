@@ -54,7 +54,7 @@ export default function Pages({ type, type2 }: PagesProps) {
   return (
     <div>
       <ShowCharacters data={data} type={type2 ? type2 : type} />
-      <Pagination page={page} />
+      <Pagination page={page} type={type} />
     </div>
   );
 }
