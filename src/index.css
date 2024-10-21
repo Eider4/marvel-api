@@ -8,18 +8,19 @@
   transition: height 0.5s;
   interpolate-size: allow-keywords;
 }
+
 .article:hover {
   height: auto;
 }
 
-html,
-body {
-  background-color: black;
-  color: red;
-}
 .CardSerie {
   overflow-x: auto;
   display: flex;
   flex-wrap: nowrap;
   width: 400px;
+}
+
+@font-face {
+  font-family: "Marvel";
+  src: url(./assets/BAD_GRUNGE.ttf);
 }

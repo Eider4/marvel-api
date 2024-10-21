@@ -1,9 +1,9 @@
 import Pages from "../../components/pages-type/PagesType";
 
-export default function CharactersPages() {
+export default function PagesSeries() {
   return (
     <div>
-      <Pages type="characters" type2={null} />
+      <Pages type="series" type2="serie" />
     </div>
   );
 }

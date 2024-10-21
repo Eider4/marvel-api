@@ -9,14 +9,15 @@ const Pagination: React.FC<PaginationProps> = ({ page }) => {
   const currentPage = page ? parseInt(page, 10) : 0;
 
   return (
-    <div className="bg-gradient-to-b from-[#0000] to-red-950 py-6 w-full flex justify-center">
+    <div className="bg-gradient-to-b from-[#0000] to-red-600 py-6 w-full flex justify-center">
       <nav className="mt-6 flex justify-center">
         <ul className="inline-flex -space-x-px text-lg">
           {/* Botón Previous */}
           <li>
             <p
               onClick={() => {
-                if (currentPage > 0) navigate(`/pages/${currentPage - 1}`);
+                if (currentPage > 0)
+                  navigate(`/pages-characters/${currentPage - 1}`);
               }}
               className={`flex items-center justify-center px-4 py-2 leading-tight text-white bg-blue-900 border-2 border-red-600 rounded-l-lg hover:text-yellow-500 hover:bg-red-700 transition duration-300 cursor-pointer ${
                 currentPage === 42 ? "cursor-not-allowed opacity-50" : ""
@@ -34,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({ page }) => {
                 <p
                   key={i}
                   onClick={() => {
-                    navigate(`/pages/${num}`);
+                    navigate(`/pages-characters/${num}`);
                   }}
                   className={`flex items-center justify-center px-4 py-2 leading-tight text-white bg-blue-900 border-2 border-red-600 hover:text-yellow-500 hover:bg-red-700 cursor-pointer transition duration-300 ${
                     num === currentPage
@@ -52,7 +53,8 @@ const Pagination: React.FC<PaginationProps> = ({ page }) => {
           <li>
             <p
               onClick={() => {
-                if (currentPage < 42) navigate(`/pages/${currentPage + 1}`);
+                if (currentPage < 42)
+                  navigate(`/pages-characters/${currentPage + 1}`);
               }}
               className={`flex items-center justify-center px-4 py-2 leading-tight text-white bg-blue-900 border-2 border-red-600 rounded-r-lg hover:text-yellow-500 hover:bg-red-700 transition duration-300 cursor-pointer ${
                 currentPage === 42 ? "cursor-not-allowed opacity-50" : ""

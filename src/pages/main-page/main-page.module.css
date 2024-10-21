@@ -1,0 +1,74 @@
+.section {
+    display: flex;
+    width: 900px;
+    height: 400px;
+}
+
+.section_img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+
+}
+
+.section_img:hover {
+    cursor: pointer;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.modalList ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+}
+
+.modalList li {
+    margin: 1em 0;
+}
+
+.modalList li p {
+    position: relative;
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-decoration: none;
+    line-height: 1.2em;
+    transition: 0.5s;
+}
+
+.modalList li p:hover,
+.modalList li p.active {
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+}
+
+.modalList li p:before,
+.modalList li p:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.modalList li p:hover:before,
+.modalList li p.active:before {
+    color: #f00;
+    z-index: 1;
+    -webkit-text-stroke: 1px #000;
+    transform: translate(2px, -2px);
+}
+
+.modalList li p:hover:after,
+.modalList li p.active:after {
+    color: #0ff;
+    z-index: 2;
+    -webkit-text-stroke: 1px #000;
+    transform: translate(4px, -4px);
+}

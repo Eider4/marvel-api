@@ -3,8 +3,8 @@
 // export const hash: string = "5f9ad9789a626058d5dc3b2045230d8e"; // Reemplaza con tu hash MD5
 export const apikey: string = "a711ab622c0ccffe0eee039231aa181c";
 export const hash: string = "44cbec27179652fd95c04428db4daf31";
-const ts: string = "1"; // Timestamp
-const urlMain: string = "https://gateway.marvel.com/v1/public/";
+export const ts: string = "1"; // Timestamp
+export const urlMain: string = "https://gateway.marvel.com/v1/public/";
 
 // [
 //   "urlStory",
@@ -49,9 +49,18 @@ export const urlEvent = (id: number | string): string =>
 //url para obtener por paginas
 export const urlCharactersPerPage = (
   limit: number | string,
+  offset: number | string,
+  type: String = "characters"
+): string =>
+  `${urlMain}${type}?ts=1&limit=${limit}&offset=${offset}&apikey=${apikey}&hash=${hash}`;
+
+//url para obtener por paginas
+export const urlPorPage = (
+  type: string | undefined,
+  limit: number | string,
   offset: number | string
 ): string =>
-  `${urlMain}characters?ts=1&limit=${limit}&offset=${offset}&apikey=${apikey}&hash=${hash}`;
+  `${urlMain}${type}?ts=1&limit=${limit}&offset=${offset}&apikey=${apikey}&hash=${hash}`;
 
 // URL para obtener un cómic específico
 export const urlComic = (id: number | string): string =>
