@@ -34,5 +34,5 @@ export async function obtenerPersonajesConImagen(type: String) {
   const width = screen.height;
   console.log(width);
 
-  return personajesConImagen.slice(0, 15);
+  return personajesConImagen.slice(0, 10);
 }
